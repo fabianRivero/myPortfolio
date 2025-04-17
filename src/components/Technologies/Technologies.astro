@@ -1,0 +1,128 @@
+---
+import Technology from "./Technology.astro";
+import StackLayout from './layouts/StackLayout.astro'
+
+const TECHNOLOGIES = [
+  {
+    name: "TypeScript",
+    icon: "/typescript.svg",
+    categorie: 'learning'
+  },
+  {
+    name: "HTML5",
+    icon: "/html.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "CSS3",
+    icon: "/css.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "JavaScript",
+    icon: "/js.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "Astro",
+    icon: "/Astro.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "React",
+    icon: "/react.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "Sass",
+    icon: "/sass.svg",
+    categorie: 'frontend'
+  },
+  {
+    name: "NodeJS",
+    icon: "/nodejs.svg",
+    categorie: 'backend'
+  },
+  {
+    name: "ExpressJS",
+    icon: "/Express.svg",
+    categorie: 'backend'
+  },
+  {
+    name: "MongoDB",
+    icon: "/mongodb.svg",
+    categorie: 'backend'
+  },
+  {
+    name: "MySQL",
+    icon: "/mysql.svg",
+    categorie: 'backend'
+  },
+  {
+    name: "Git",
+    icon: "/git.svg",
+    categorie: 'tools'
+  },
+  {
+    name: "GitHub",
+    icon: "/github.svg",
+    categorie: 'tools'
+  },
+  {
+    name: "VS Code",
+    icon: "/visual-studio-code.svg",
+    categorie: 'tools'
+  },
+  {
+      name:"Vite", 
+      icon:"/vite.svg", 
+      categorie:'tools'
+  },
+  {
+      name:"Angular", 
+      icon:"/angular.svg", 
+      categorie:'learning'
+  },
+  {
+      name:"Tailwind", 
+      icon:"/tailwind.svg", 
+      categorie:'learning'
+  },
+  {
+      name:"Golang", 
+      icon:"/Golang.svg", 
+      categorie:'learning'
+  }
+]
+---
+
+<div id="tech-stacks" class="flex flex-wrap items-stretch mt-2 mx-7 justify-center gap-x-[9vw] gap-y-[1vh]">
+  <StackLayout title="FRONTEND">
+    {
+      TECHNOLOGIES.filter((tech) => tech.categorie === "frontend") 
+      .map((tech) => <Technology name={tech.name} icon={tech.icon} />)
+    }
+  </StackLayout>
+
+  <StackLayout title="BACKEND">
+    {
+      TECHNOLOGIES.filter((tech) => tech.categorie === "backend") 
+      .map((tech) => <Technology name={tech.name} icon={tech.icon} />)
+    }
+  </StackLayout>
+
+  <StackLayout title="HERRAMIENTAS">
+    {
+      TECHNOLOGIES.filter((tech) => tech.categorie === "tools") 
+      .map((tech) => <Technology name={tech.name} icon={tech.icon} />)
+    }
+  </StackLayout>
+
+  <StackLayout title="APRENDIENDO">
+    {
+      TECHNOLOGIES.filter((tech) => tech.categorie === "learning") 
+      .map((tech) => <Technology name={tech.name} icon={tech.icon} />)
+    }
+  </StackLayout>
+
+<div/>

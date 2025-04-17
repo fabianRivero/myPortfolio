@@ -1,0 +1,77 @@
+---
+import SliderButtons from '../SliderButtons/SliderButtons.astro'
+
+const CERTIFICATIONS = [
+  {
+    title: "Certificación de Curso online Full Stack 5 ECTS Completado con grado 4.",
+    image: "/UH-certification.webp",
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/2c4418e2912239e6a917c09e62b08b69/",
+    date:  "Noviembre, 2024",
+    from:  "University of Helsinki",
+    description: "Curso sobre la creación de aplicaciones web de una sola pagina usando React para el desarrollo del frontend y uso de Node.js y Express para el desarrollo de API REST.", 
+  },
+  {
+    title: "JavaScript Avanzado",
+    image: "/JS-CB.webp",
+    link: "",
+    date:  "Marzo. 2025",
+    from:  "Conquer Blocks",
+    description: "Certificación de dominio sobre conceptos de JavasCript avanzados como closures, callbacks, promesas, async/await, DOM, eventos.", 
+  },
+  {
+    title: "Responsive Web Design",
+    image: "/FCC-responsive.webp",
+    link: "https://www.freecodecamp.org/certification/FabianRivero/responsive-web-design",
+    date:  "Marzo. 2025",
+    from:  "FreeCodeCamp",
+    description: "Certificación de manejo de HTML5 y CSS3 con el proposito de desarrollar paginas web con diseño 'responsive'.", 
+  },
+]
+---
+
+<section id="education" class="flex flex-col gap-4 min-h-[100vh] w-screen px-5 mt-5">
+  <h2 class="text-[32px] font-bold">Educación</h2>
+  <div class="relative overflow-hidden mt-7">
+    <div id="certificationSlides" class="flex flex-row transition-transform duration-300 ease-in-out">
+      {
+        CERTIFICATIONS.map((certification) => (
+        <article id="certification" class="min-w-full">
+          <figure >    
+            <div class="relative group flex flex-col">
+              <img src={certification.image} alt={certification.title} class="h-[300px] z-[1] rounded-md">
+              
+            {
+              certification.link !== "" && (
+                <div class="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 bg-slate-900/30 backdrop-blur-sm w-full z-[2] transition-opacity duration-300 ease-out">
+                <nav class="flex items-center justify-center h-full">
+                    <div class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                    <svg 
+                        class="w-[15px] fill-text transtion-all duration-300 ease-out hover:fill-primaryHover"
+                        version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 112.55 122.88">
+                    </svg>
+                    <a href={certification.link} target="_blank">Certificado</a>
+                    </div>
+                </nav>
+                </div>
+                )
+            }
+
+            </div>
+            
+            <figcaption class="flex flex-col gap-5">
+              <h3 class="text-[22px] font-bold mt-3">{certification.title}</h3>
+              <h4 class="text-[18px] font-bold">{certification.from}</h4>
+              <span class="text-[15px] font-light">{certification.date}</span>
+              <p class="">{certification.description}</p>
+            </figcaption>
+          </figure>
+        </article>
+        ))     
+      }          
+    </div>
+  </div>
+  
+  <SliderButtons idTermination="Certification"/>
+    
+</section>

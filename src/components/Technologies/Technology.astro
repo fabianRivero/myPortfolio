@@ -1,0 +1,9 @@
+---
+const { name, icon } = Astro.props;
+---
+
+<figure class="flex flex-col relative items-center hover:bg-background p-1">
+    <img src= {icon} alt= {name}
+    class="absolute top-[10px] h-[30px]">
+    <figcaption class="mt-[88%] text-[8px] cursor-context-menu">{name}</figcaption>
+</figure>

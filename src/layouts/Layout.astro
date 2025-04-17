@@ -1,0 +1,24 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body id="body" class="m-0 w-full h-full overflow-x-hidden">
+		<div id="content-container" class="bg-background text-generalText">
+		<slot />
+		</div>
+	</body>
+</html>
+
+<script src="../components/HamburgerMenu/scripts/hamburgerMenuToggle.js"></script>
+<script src="../components/HamburgerMenu/scripts/headerHide.js"></script>
+<script src="../components/Projects/scripts/projectsSlide.js"></script>
+<script src="../components/Education/scripts/certificationsSlide.js"></script>

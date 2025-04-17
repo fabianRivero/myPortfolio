@@ -1,0 +1,39 @@
+---
+import Socials from "../Socials/Socials.astro";
+---
+
+<section id="home" class="w-screen min-h-[100vh] pt-[30vh]">
+    <div class="px-12">
+        <h1 class="flex flex-col w-[95%] text-[32px] font-bold">
+            Fabián Rivero.
+            <strong class="text-text"> Desarrollador Full Stack</strong>
+        </h1>
+    
+        <p class="w-[90%] my-10 text-lg">
+            Soy un desarrollador Full Stack con experiencia en la creación de aplicaciones web modernas y escalables. 
+        </p>
+    
+        <div class="relative inline-block group">
+            <div class="absolute inset-0 border border-primaryHover rounded-md"></div>
+            <a href="mailto:fabianriverodev@gmail.com" 
+                class="relative z-[1]
+                       inline-block 
+                       bg-background
+                       py-3 px-4 
+                       text-[12px] 
+                       border-solid 
+                       border-primary
+                       border-2 
+                       rounded-md
+                       transition-all duration-300 ease-out
+                       hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg hover:bg-primaryHover
+                       active:translate-y-0 active:translate-x-0 active:shadow-none active:bg-primary"
+            >
+                Contáctame
+            </a>
+        </div>
+    </div>
+    
+    <Socials />
+    
+</section>

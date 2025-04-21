@@ -1,8 +1,6 @@
 ---
 import SliderButtons from "../SliderButtons/SliderButtons.astro"
 
-
-
 const PROJECTS = [
   {
     title: "Fitness Blog",
@@ -36,30 +34,37 @@ const PROJECTS = [
 ]
 ---
 
-<section id="projects" class="flex flex-col gap-4 min-h-[100vh] w-screen px-5 mt-5">
-  <h2 class="text-[32px] font-bold">Proyectos</h2>
-  <div class="relative overflow-hidden mt-7">
-    <div id="projectSlides" class="flex flex-row transition-transform duration-300 ease-in-out">
+<section id="projects" class="flex flex-col gap-4 min-h-[100vh] w-screen px-5 mt-5 lg:px-[180px] xl:px-[140px]">
+  <h2 class="text-[32px] font-bold mb-5">Proyectos</h2>
+  <div class="relative overflow-hidden mt-7 xl:hidden">
+    <div id="projectSlides" 
+    class="flex flex-row transition-transform duration-300 ease-in-out">
       {
         PROJECTS.map((project) => (
-        <article id="project" class="min-w-full">
-          <figure >    
-            <div class="relative group flex flex-col">
-              <img src={project.image} alt={project.title} class="h-[300px] z-[1] rounded-md">
-              <div class="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 bg-slate-900/30 backdrop-blur-sm w-full z-[2] transition-opacity duration-300 ease-out">
-                <nav class="flex flex-col gap-5 items-center justify-center h-full">
+        <article id="project" class="min-w-full flex flex-col items-center">
+          <figure class="">    
+            <div 
+            class="mx-5 relative group flex flex-col">
+              <img src={project.image} alt={project.title} 
+              class="z-[1] rounded-md">
+              
+              <div 
+              class="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 bg-slate-900/30 backdrop-blur-sm w-full z-[2] transition-opacity duration-300 ease-out">
+                <nav 
+                class="flex flex-col gap-5 items-center justify-center h-full">
                   {
                     project.links.map((link) => {
                       if(link.name === "frontend" || link.name === "backend"){
                         return (
-                          <div class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                          <div 
+                          class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
                             <svg 
                               class="w-[15px] fill-text 
                               transtion-all duration-300 ease-out
                               hover:fill-primaryHover"
                               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
                             </svg>
-                            <a href={link.url} target="_blank" class="">{link.name}</a>
+                            <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
                           </div>
                         )
                       } else{
@@ -73,7 +78,7 @@ const PROJECTS = [
                               version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112.55 122.88" style="enable-background:new 0 0 112.55 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M104.41,6.1c6.26,5.13,6.93,11.83,7.62,13.46l0.34,2.5c0.9,5.39-1.65,12.75-5.58,17.38L89.2,59.84 c-6.76,7.84-18.04,10.44-27.48,6.37l-0.03,0.04c3.45,5.63,3.15,9.64,3.46,10.57c0.9,5.41-1.65,12.74-5.58,17.38L41.97,114.6 c-8.53,9.89-23.58,11.1-33.53,2.61c-5.04-5.04-7.84-9.31-8.37-16.49c-0.47-6.24,1.53-12.37,5.59-17.18l17.92-20.79 c5.01-5.14,7.5-5.86,13.33-7.47l2.5-0.34l10.66,1.56c0.22,0.08,0.44,0.18,0.65,0.27l0.03-0.04c-5.35-8.71-4.57-20.11,2.14-27.97 L70.48,8.37c4.11-4.77,9.99-7.71,16.15-8.19c5.37-0.89,12.77,1.64,17.38,5.58L104.41,6.1L104.41,6.1z M74.23,51.71l-3.66,4.24 l0.64,0.01l0.02,0l0.6-0.02l0.01,0l0.14-0.01l0.02,0c2.11-0.16,4.19-0.88,5.96-2.14c0.34-0.24,0.68-0.51,1.02-0.82l0,0l0,0 c0.3-0.27,0.62-0.59,0.93-0.95l0,0l0.12-0.13l17.45-20.24c1.47-1.7,2.36-3.75,2.68-5.86c0.07-0.44,0.11-0.87,0.13-1.26 c0.02-0.41,0.01-0.85-0.01-1.28l0-0.05l-0.01-0.11c-0.16-2.11-0.88-4.19-2.14-5.96c-0.24-0.34-0.51-0.67-0.78-0.97l-0.03-0.04 c-0.29-0.32-0.61-0.64-0.94-0.94l0,0l-0.06-0.05l-0.05-0.05L96.16,15c-1.69-1.43-3.7-2.3-5.78-2.61l-0.03,0 c-0.43-0.06-0.85-0.11-1.24-0.12c-0.41-0.02-0.84-0.01-1.27,0.01l-0.07,0l-0.1,0.01c-2.11,0.16-4.19,0.88-5.96,2.14 c-0.34,0.24-0.68,0.51-0.98,0.78l-0.03,0.03c-0.33,0.29-0.64,0.61-0.94,0.95l0,0l-0.12,0.13L62.2,36.55 c-1.47,1.7-2.36,3.75-2.68,5.86h0c-0.06,0.43-0.11,0.86-0.12,1.26c-0.02,0.41-0.01,0.85,0.01,1.28l0.01,0.15l0,0.01v0.02 c0.03,0.46,0.09,0.91,0.18,1.37l3.58-4.15l0.1-0.12l0.13-0.14l0,0l0.02-0.02c1.29-1.39,3.02-2.18,4.79-2.3 c1.78-0.13,3.62,0.39,5.1,1.6l0,0l0.02,0.01l0.09,0.08l0.02,0.02l0.02,0.02l0.01,0.01l0.02,0.01l0.07,0.06l0,0l0,0 c2.06,1.83,2.82,4.6,2.21,7.13c-0.12,0.5-0.3,1-0.54,1.48c-0.22,0.46-0.51,0.9-0.83,1.31l-0.02,0.02l-0.03,0.04l0,0l-0.01,0.02 l-0.1,0.12l0,0L74.23,51.71L74.23,51.71z M40.06,80.23L40.06,80.23c2.33,2.01,5.88,1.75,7.89-0.58l5.58-6.47 c0.65,1.45,1.04,3,1.16,4.57c0.25,3.44-0.79,6.97-3.19,9.75l-17.46,20.24c-2.4,2.79-5.73,4.34-9.16,4.59 c-3.38,0.25-6.84-0.75-9.59-3.05l-0.16-0.14c-2.78-2.4-4.34-5.73-4.59-9.16c-0.25-3.4,0.76-6.89,3.1-9.65l0.09-0.1l17.25-20l0,0 l0,0l0.21-0.24c2.4-2.78,5.73-4.34,9.16-4.59c1.58-0.12,3.18,0.04,4.71,0.47l-5.58,6.47C37.47,74.67,37.73,78.22,40.06,80.23 L40.06,80.23z"/></g>
                             </svg>
 
-                            <a href={link.url} target="_blank" class="">{link.name}</a>
+                            <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
                           </div>
                         )
                       }
@@ -83,28 +88,170 @@ const PROJECTS = [
               </div>
             </div>
             
-            <figcaption class="flex flex-col gap-5">
-              <h3 class="text-[22px] font-bold mt-3">{project.title}</h3>
-              <p>Tecnologias usadas:</p>
+            <figcaption class="flex flex-col gap-5 mx-5">
+              <h3 class="text-[22px] font-bold mt-3 sm:text-[24px]">{project.title}</h3>
+              <p class="sm:text-[16px]">Tecnologias usadas:</p>
               <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset">
                 {
                   project.technologies.map((tech) => (
                     <li class="flex flex-col gap-[2px] items-center w-full pt-2 hover:bg-background">
-                      <img src={tech.icon} alt={tech.name} class="h-[20px]"/>
-                      <p class="text-[9px] cursor-context-menu">{tech.name}</p>
+                      <img src={tech.icon} alt={tech.name} class="h-[20px] sm:h-[23px]"/>
+                      <p class="text-[9px] cursor-context-menu sm:text-[11px]">{tech.name}</p>
                     </li>
                   ))
                 }
               </ul>
 
-              <p class="">{project.description}</p>
+              <p class="sm:text-[15px]">{project.description}</p>
             </figcaption>
           </figure>
         </article>
         ))     
       }          
     </div>
-  </div>
-  
+  </div> 
   <SliderButtons idTermination="Project"/>
-</section>
+
+
+  <div class="hidden xl:flex xl:flex-col xl:gap-10">
+     {
+        PROJECTS.map((project, index) => (
+          index % 2 === 0 ? (
+            <article id="project" class="">
+              <figure class="xl:flex xl:flex-row xl:gap-2 justify-between">    
+                <div 
+                class="mx-5 relative group flex flex-col">
+                  <img src={project.image} alt={project.title} 
+                  class="xl:z-[1] xl:rounded-md xl:max-w-[400px]">
+                  
+                  <div 
+                  class="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 bg-slate-900/30 backdrop-blur-sm w-full z-[2] transition-opacity duration-300 ease-out">
+                    <nav 
+                    class="flex flex-col gap-5 items-center justify-center h-full">
+                      {
+                        project.links.map((link) => {
+                          if(link.name === "frontend" || link.name === "backend"){
+                            return (
+                              <div 
+                              class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                                <svg 
+                                  class="w-[15px] fill-text 
+                                  transtion-all duration-300 ease-out
+                                  hover:fill-primaryHover"
+                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+                                </svg>
+                                <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
+                              </div>
+                            )
+                          } else{
+                            return (
+                              <div class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                                
+                                <svg 
+                                  class="w-[15px] fill-text 
+                                  transtion-all duration-300 ease-out
+                                  hover:fill-primaryHover"
+                                  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112.55 122.88" style="enable-background:new 0 0 112.55 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M104.41,6.1c6.26,5.13,6.93,11.83,7.62,13.46l0.34,2.5c0.9,5.39-1.65,12.75-5.58,17.38L89.2,59.84 c-6.76,7.84-18.04,10.44-27.48,6.37l-0.03,0.04c3.45,5.63,3.15,9.64,3.46,10.57c0.9,5.41-1.65,12.74-5.58,17.38L41.97,114.6 c-8.53,9.89-23.58,11.1-33.53,2.61c-5.04-5.04-7.84-9.31-8.37-16.49c-0.47-6.24,1.53-12.37,5.59-17.18l17.92-20.79 c5.01-5.14,7.5-5.86,13.33-7.47l2.5-0.34l10.66,1.56c0.22,0.08,0.44,0.18,0.65,0.27l0.03-0.04c-5.35-8.71-4.57-20.11,2.14-27.97 L70.48,8.37c4.11-4.77,9.99-7.71,16.15-8.19c5.37-0.89,12.77,1.64,17.38,5.58L104.41,6.1L104.41,6.1z M74.23,51.71l-3.66,4.24 l0.64,0.01l0.02,0l0.6-0.02l0.01,0l0.14-0.01l0.02,0c2.11-0.16,4.19-0.88,5.96-2.14c0.34-0.24,0.68-0.51,1.02-0.82l0,0l0,0 c0.3-0.27,0.62-0.59,0.93-0.95l0,0l0.12-0.13l17.45-20.24c1.47-1.7,2.36-3.75,2.68-5.86c0.07-0.44,0.11-0.87,0.13-1.26 c0.02-0.41,0.01-0.85-0.01-1.28l0-0.05l-0.01-0.11c-0.16-2.11-0.88-4.19-2.14-5.96c-0.24-0.34-0.51-0.67-0.78-0.97l-0.03-0.04 c-0.29-0.32-0.61-0.64-0.94-0.94l0,0l-0.06-0.05l-0.05-0.05L96.16,15c-1.69-1.43-3.7-2.3-5.78-2.61l-0.03,0 c-0.43-0.06-0.85-0.11-1.24-0.12c-0.41-0.02-0.84-0.01-1.27,0.01l-0.07,0l-0.1,0.01c-2.11,0.16-4.19,0.88-5.96,2.14 c-0.34,0.24-0.68,0.51-0.98,0.78l-0.03,0.03c-0.33,0.29-0.64,0.61-0.94,0.95l0,0l-0.12,0.13L62.2,36.55 c-1.47,1.7-2.36,3.75-2.68,5.86h0c-0.06,0.43-0.11,0.86-0.12,1.26c-0.02,0.41-0.01,0.85,0.01,1.28l0.01,0.15l0,0.01v0.02 c0.03,0.46,0.09,0.91,0.18,1.37l3.58-4.15l0.1-0.12l0.13-0.14l0,0l0.02-0.02c1.29-1.39,3.02-2.18,4.79-2.3 c1.78-0.13,3.62,0.39,5.1,1.6l0,0l0.02,0.01l0.09,0.08l0.02,0.02l0.02,0.02l0.01,0.01l0.02,0.01l0.07,0.06l0,0l0,0 c2.06,1.83,2.82,4.6,2.21,7.13c-0.12,0.5-0.3,1-0.54,1.48c-0.22,0.46-0.51,0.9-0.83,1.31l-0.02,0.02l-0.03,0.04l0,0l-0.01,0.02 l-0.1,0.12l0,0L74.23,51.71L74.23,51.71z M40.06,80.23L40.06,80.23c2.33,2.01,5.88,1.75,7.89-0.58l5.58-6.47 c0.65,1.45,1.04,3,1.16,4.57c0.25,3.44-0.79,6.97-3.19,9.75l-17.46,20.24c-2.4,2.79-5.73,4.34-9.16,4.59 c-3.38,0.25-6.84-0.75-9.59-3.05l-0.16-0.14c-2.78-2.4-4.34-5.73-4.59-9.16c-0.25-3.4,0.76-6.89,3.1-9.65l0.09-0.1l17.25-20l0,0 l0,0l0.21-0.24c2.4-2.78,5.73-4.34,9.16-4.59c1.58-0.12,3.18,0.04,4.71,0.47l-5.58,6.47C37.47,74.67,37.73,78.22,40.06,80.23 L40.06,80.23z"/></g>
+                                </svg>
+
+                                <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </nav>
+                  </div>
+                </div>
+                
+                <figcaption class="flex flex-col gap-5 mx-5">
+                  <h3 class="text-[22px] font-bold mt-3 sm:text-[24px]">{project.title}</h3>
+                  <p class="sm:text-[16px]">Tecnologias usadas:</p>
+                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset lg:w-[50%]">
+                    {
+                      project.technologies.map((tech) => (
+                        <li class="flex flex-col gap-[2px] items-center w-full pt-2 hover:bg-background">
+                          <img src={tech.icon} alt={tech.name} class="h-[20px] sm:h-[23px]"/>
+                          <p class="text-[9px] cursor-context-menu sm:text-[11px]">{tech.name}</p>
+                        </li>
+                      ))
+                    }
+                  </ul>
+
+                  <p class="sm:text-[15px]">{project.description}</p>
+                </figcaption>
+              </figure>
+            </article>
+          ) :(
+            <article id="project" class="">
+              <figure class="xl:flex xl:flex-row gap-2 justify-between">
+                <figcaption class="flex flex-col gap-5 mx-5">
+                  <h3 class="text-[22px] font-bold mt-3 sm:text-[24px]">{project.title}</h3>
+                  <p class="sm:text-[16px]">Tecnologias usadas:</p>
+                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset lg:w-[50%]">
+                    {
+                      project.technologies.map((tech) => (
+                        <li class="flex flex-col gap-[2px] items-center w-full pt-2 hover:bg-background">
+                          <img src={tech.icon} alt={tech.name} class="h-[20px] sm:h-[23px]"/>
+                          <p class="text-[9px] cursor-context-menu sm:text-[11px]">{tech.name}</p>
+                        </li>
+                      ))
+                    }
+                  </ul>
+
+                  <p class="sm:text-[15px]">{project.description}</p>
+                </figcaption>
+                    
+                <div 
+                class="mx-5 relative group flex flex-col">
+                  <img src={project.image} alt={project.title} 
+                  class="xl:z-[1] xl:rounded-md xl:max-w-[400px]">
+                  
+                  <div 
+                  class="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 bg-slate-900/30 backdrop-blur-sm w-full z-[2] transition-opacity duration-300 ease-out">
+                    <nav 
+                    class="flex flex-col gap-5 items-center justify-center h-full">
+                      {
+                        project.links.map((link) => {
+                          if(link.name === "frontend" || link.name === "backend"){
+                            return (
+                              <div 
+                              class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                                <svg 
+                                  class="w-[15px] fill-text 
+                                  transtion-all duration-300 ease-out
+                                  hover:fill-primaryHover"
+                                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+                                </svg>
+                                <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
+                              </div>
+                            )
+                          } else{
+                            return (
+                              <div class="px-3 py-2 border-solid border-generalText border-[1px] rounded-full flex gap-2 hover:border-primaryHover hover:bg-primaryHover transition-colors duration-200 ease-out cursor-pointer">
+                                
+                                <svg 
+                                  class="w-[15px] fill-text 
+                                  transtion-all duration-300 ease-out
+                                  hover:fill-primaryHover"
+                                  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112.55 122.88" style="enable-background:new 0 0 112.55 122.88" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M104.41,6.1c6.26,5.13,6.93,11.83,7.62,13.46l0.34,2.5c0.9,5.39-1.65,12.75-5.58,17.38L89.2,59.84 c-6.76,7.84-18.04,10.44-27.48,6.37l-0.03,0.04c3.45,5.63,3.15,9.64,3.46,10.57c0.9,5.41-1.65,12.74-5.58,17.38L41.97,114.6 c-8.53,9.89-23.58,11.1-33.53,2.61c-5.04-5.04-7.84-9.31-8.37-16.49c-0.47-6.24,1.53-12.37,5.59-17.18l17.92-20.79 c5.01-5.14,7.5-5.86,13.33-7.47l2.5-0.34l10.66,1.56c0.22,0.08,0.44,0.18,0.65,0.27l0.03-0.04c-5.35-8.71-4.57-20.11,2.14-27.97 L70.48,8.37c4.11-4.77,9.99-7.71,16.15-8.19c5.37-0.89,12.77,1.64,17.38,5.58L104.41,6.1L104.41,6.1z M74.23,51.71l-3.66,4.24 l0.64,0.01l0.02,0l0.6-0.02l0.01,0l0.14-0.01l0.02,0c2.11-0.16,4.19-0.88,5.96-2.14c0.34-0.24,0.68-0.51,1.02-0.82l0,0l0,0 c0.3-0.27,0.62-0.59,0.93-0.95l0,0l0.12-0.13l17.45-20.24c1.47-1.7,2.36-3.75,2.68-5.86c0.07-0.44,0.11-0.87,0.13-1.26 c0.02-0.41,0.01-0.85-0.01-1.28l0-0.05l-0.01-0.11c-0.16-2.11-0.88-4.19-2.14-5.96c-0.24-0.34-0.51-0.67-0.78-0.97l-0.03-0.04 c-0.29-0.32-0.61-0.64-0.94-0.94l0,0l-0.06-0.05l-0.05-0.05L96.16,15c-1.69-1.43-3.7-2.3-5.78-2.61l-0.03,0 c-0.43-0.06-0.85-0.11-1.24-0.12c-0.41-0.02-0.84-0.01-1.27,0.01l-0.07,0l-0.1,0.01c-2.11,0.16-4.19,0.88-5.96,2.14 c-0.34,0.24-0.68,0.51-0.98,0.78l-0.03,0.03c-0.33,0.29-0.64,0.61-0.94,0.95l0,0l-0.12,0.13L62.2,36.55 c-1.47,1.7-2.36,3.75-2.68,5.86h0c-0.06,0.43-0.11,0.86-0.12,1.26c-0.02,0.41-0.01,0.85,0.01,1.28l0.01,0.15l0,0.01v0.02 c0.03,0.46,0.09,0.91,0.18,1.37l3.58-4.15l0.1-0.12l0.13-0.14l0,0l0.02-0.02c1.29-1.39,3.02-2.18,4.79-2.3 c1.78-0.13,3.62,0.39,5.1,1.6l0,0l0.02,0.01l0.09,0.08l0.02,0.02l0.02,0.02l0.01,0.01l0.02,0.01l0.07,0.06l0,0l0,0 c2.06,1.83,2.82,4.6,2.21,7.13c-0.12,0.5-0.3,1-0.54,1.48c-0.22,0.46-0.51,0.9-0.83,1.31l-0.02,0.02l-0.03,0.04l0,0l-0.01,0.02 l-0.1,0.12l0,0L74.23,51.71L74.23,51.71z M40.06,80.23L40.06,80.23c2.33,2.01,5.88,1.75,7.89-0.58l5.58-6.47 c0.65,1.45,1.04,3,1.16,4.57c0.25,3.44-0.79,6.97-3.19,9.75l-17.46,20.24c-2.4,2.79-5.73,4.34-9.16,4.59 c-3.38,0.25-6.84-0.75-9.59-3.05l-0.16-0.14c-2.78-2.4-4.34-5.73-4.59-9.16c-0.25-3.4,0.76-6.89,3.1-9.65l0.09-0.1l17.25-20l0,0 l0,0l0.21-0.24c2.4-2.78,5.73-4.34,9.16-4.59c1.58-0.12,3.18,0.04,4.71,0.47l-5.58,6.47C37.47,74.67,37.73,78.22,40.06,80.23 L40.06,80.23z"/></g>
+                                </svg>
+
+                                <a href={link.url} target="_blank" class="text-[14px]">{link.name}</a>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </nav>
+                  </div>
+                </div>
+              </figure>
+            </article>
+          ) 
+        ))     
+      }          
+  </div>
+
+
+  </section>

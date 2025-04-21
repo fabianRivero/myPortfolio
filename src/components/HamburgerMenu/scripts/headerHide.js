@@ -10,7 +10,6 @@ window.addEventListener('scroll', () => {
 
   if (currentScroll > lastScroll) {
     header.classList.add('-translate-y-full');
-    hamburgerButton.classList.add('-translate-y-[400%]');
     sideMenu.classList.add("translate-x-full");
     overlay.classList.add("hidden");
     body.classList.remove("overflow-hidden");

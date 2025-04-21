@@ -2,8 +2,13 @@
 const { name, icon } = Astro.props;
 ---
 
-<figure class="flex flex-col relative items-center hover:bg-background p-1">
+<figure class="flex flex-col relative items-center hover:bg-background py-1">
     <img src= {icon} alt= {name}
-    class="absolute top-[10px] h-[30px]">
-    <figcaption class="mt-[88%] text-[8px] cursor-context-menu">{name}</figcaption>
+    class="absolute top-[10px] h-[30px] sm:h-[35px] md:h-[40px] 2xl:h-[44px]">
+    <figcaption class=
+    "mt-[40px] text-[8px] cursor-context-menu
+    sm:text-[11px] sm:mt-[48px] lg:text-[11px] 2xl:text-[12px]
+    ">
+        {name}
+    </figcaption>
 </figure>

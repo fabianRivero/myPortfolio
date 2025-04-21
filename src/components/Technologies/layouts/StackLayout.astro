@@ -2,8 +2,8 @@
 const { title } = Astro.props;
 ---
 
-<div id="stack" class="flex flex-col w-[40%] items-center">
-    <h4 class="mb-1 text-[16px] font-bold">{title}</h4>
+<div id="stack" class="flex flex-col items-center">
+    <h4 class="mb-1 text-[16px] font-bold sm:text-[18px] 2xl:text-[21px]">{title}</h4>
     <div id="stack-box" class="w-full h-auto bg-sideMenu justfy-center shadow-main-inset">
         <div class="grid grid-cols-3 grid-rows-2 items-center overflow-hidden">
             <slot/>

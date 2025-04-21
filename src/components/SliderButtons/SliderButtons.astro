@@ -3,7 +3,7 @@ import PrevButton from './components/PrevButton.astro'
 import NextButton from './components/NextButton.astro'
 const { idTermination } = Astro.props;
 ---
-<div class="flex justify-center gap-[76vw] items-center mt-3 top-[200px]">
+<div class="flex justify-center gap-[76vw] items-center mt-3 top-[200px] lg:gap-[50vw] xl:hidden">
     <div id= `prev${idTermination}` class="cursor-pointer">
       <PrevButton />
     </div>

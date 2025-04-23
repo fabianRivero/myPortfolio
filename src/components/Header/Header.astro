@@ -4,11 +4,30 @@ import HeaderNav from "./components/HeaderNav.astro";
 
     <header id="header" 
     class="fixed z-[4] w-full h-100% pt-7 top-0 right-0 bg-background flex justify-between items-center p-4 transition-transform duration-300
-    ">
-        <div>
-        <img src=""/>
-        LOGO
-        </div>
+    lg:px-[35px]">
+    <div class="relative inline-block group rotate-[45deg]">
+        <div class="absolute inset-0 border border-primaryHover rounded-md"></div>
+        <a href="mailto:fabianriverodev@gmail.com" target="_blank"
+            class="relative z-[1]
+                   inline-block 
+                   bg-background
+                   h-[38px] w-[38px]
+                   
+                   border-solid 
+                   border-primary
+                   border-2 
+                   rounded-md
+                   transition-all duration-300 ease-out
+                   hover:-translate-y-0 hover:-translate-x-1 hover:shadow-lg hover:bg-primaryHover
+                   active:translate-y-0 active:translate-x-0 active:shadow-none active:bg-primary
+                   sm:text-[15px]
+                   lg:text-[18px]
+                   "
+        >
+            <p class="rotate-[-45deg] pt-1 pb-[7px] text-[11px]">FRDev</p>
+        </a>
+    </div>
+    
         <div id="large-screen-menu" class="hidden lg:block lg:mr-7">
             <HeaderNav />
         </div>

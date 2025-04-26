@@ -34,7 +34,7 @@ const PROJECTS = [
 ]
 ---
 
-<section id="projects" class="flex flex-col gap-4 min-h-[100vh] w-screen px-5 mt-5 lg:px-[180px] xl:px-[180px] 2xl:px-[210px]">
+<section id="projects" class="flex flex-col gap-4 min-h-[100vh] w-screen px-5 py-14 mt-5 lg:px-[180px] xl:px-[180px] 2xl:px-[210px]">
   <h2 class="text-[32px] font-bold mb-5">Proyectos</h2>
   <div class="relative overflow-hidden mt-7 xl:hidden">
     <div id="projectSlides" 
@@ -42,7 +42,7 @@ const PROJECTS = [
       {
         PROJECTS.map((project) => (
         <article id="project" class="min-w-full flex flex-col items-center">
-          <figure class="">    
+          <figure class="md:w-[85%]">    
             <div 
             class="mx-5 relative group flex flex-col">
               <img src={project.image} alt={project.title} 
@@ -167,7 +167,7 @@ const PROJECTS = [
                 <figcaption class="flex flex-col gap-5 mx-5">
                   <h3 class="text-[22px] font-bold mt-3 sm:text-[24px]">{project.title}</h3>
                   <p class="sm:text-[16px]">Tecnologias usadas:</p>
-                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset lg:w-[50%]">
+                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset xl:w-[90%] 2xl:w-[60%]">
                     {
                       project.technologies.map((tech) => (
                         <li class="flex flex-col gap-[2px] items-center w-full pt-2 hover:bg-background">
@@ -188,7 +188,7 @@ const PROJECTS = [
                 <figcaption class="flex flex-col gap-5 mx-5">
                   <h3 class="text-[22px] font-bold mt-3 sm:text-[24px]">{project.title}</h3>
                   <p class="sm:text-[16px]">Tecnologias usadas:</p>
-                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset lg:w-[50%]">
+                  <ul class="flex gap-2 bg-sideMenu rounded-md items-center justify-between shadow-main-inset xl:w-[90%] 2xl:w-[60%]">
                     {
                       project.technologies.map((tech) => (
                         <li class="flex flex-col gap-[2px] items-center w-full pt-2 hover:bg-background">

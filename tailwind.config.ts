@@ -18,7 +18,7 @@ const config: Config = {
       },
       boxShadow:{
        'main-inset': "inset -4px 4px 5px -3px rgba(0,0,0,1)"
-      }
+      },
     },
   },
   plugins: [],

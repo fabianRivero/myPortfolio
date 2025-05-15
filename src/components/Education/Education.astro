@@ -1,5 +1,6 @@
 ---
 import SliderButtons from '../SliderButtons/SliderButtons.astro'
+import "./Education.css";
 
 const CERTIFICATIONS = [
   {
@@ -35,7 +36,7 @@ const CERTIFICATIONS = [
     <div id="certificationSlides" class="flex flex-row transition-transform duration-300 ease-in-out">
       {
         CERTIFICATIONS.map((certification) => (
-        <article id="certification" class="min-w-full flex flex-col items-center">
+        <article class="education-slide">
           <figure class="md:w-[85%]">    
             <div class="mx-5 relative group flex flex-col">
               <img src={certification.image} alt={certification.title} class="z-[1] rounded-md">
@@ -74,6 +75,7 @@ const CERTIFICATIONS = [
   </div>
   
   <SliderButtons idTermination="Certification"/>
+  <div id="certificationsDots" class="flex justify-center gap-2 mt-4 xl:hidden"></div>
 
   <div class="hidden xl:flex xl:flex-col xl:gap-14">
     {

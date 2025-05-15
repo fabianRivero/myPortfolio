@@ -13,6 +13,7 @@ window.addEventListener('scroll', () => {
     sideMenu.classList.add("translate-x-full");
     overlay.classList.add("hidden");
     body.classList.remove("overflow-hidden");
+        hamburgerButton.classList.add('-translate-y-[400%]');
   } else {
     header.classList.remove('-translate-y-full');
     hamburgerButton.classList.remove('-translate-y-[400%]');

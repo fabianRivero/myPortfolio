@@ -1,5 +1,6 @@
 ---
 import SliderButtons from "../SliderButtons/SliderButtons.astro"
+import "./Projects.css";
 
 const PROJECTS = [
   {
@@ -15,7 +16,7 @@ const PROJECTS = [
       {name:"NodeJS", icon:"/nodejs.svg"},
      ],
     links: [{name:"frontend", url: "https://github.com/fabianRivero/fitnessblog"}, {name:"backend", url: "https://github.com/fabianRivero/APIBlog"}, {name:"website", url:"https://myfirstfitnessblog.netlify.app/"}],
-    description: "Blog construido con Astro y con componentes hechos con React. Tiene incorporado un sistema de paginación tanto del lado del frontend como en el backend par administrar kis blogs. Tiene un sistema de paginacion dinamica para crear nuevos blogs desde el mismo sitio web para usuarios con rol de administrador. El backend es una API que gestiona una base de datos en MongoDB Atlas y controla peticiones CRUD para blogs y usuarios.", 
+    description: "Blog construido con Astro y con componentes hechos con React. Tiene incorporado un sistema de paginación tanto del lado del frontend como en el backend par administrar los blogs. Tiene un sistema de paginación dinamica para crear nuevos blogs desde el mismo sitio web para usuarios con rol de administrador. El backend es una API que gestiona una base de datos en MongoDB Atlas y controla peticiones CRUD para blogs y usuarios.", 
   },
   {
     title: "Link Shrinker",
@@ -29,7 +30,7 @@ const PROJECTS = [
       {name:"MySQL", icon:"/mysql.svg"}
     ],
     links: [{name:"frontend", url: "https://github.com/fabianRivero/urlShirnkerFrontend"}, {name:"backend", url: "https://github.com/fabianRivero/url_shortenerAPI"}, {name:"website", url:"https://myurlshrinker.netlify.app/"}],
-    description: "App web que proporciona una nueva URL a una URL que proporcione el usuario, la nueva URL redirige a la dirección de la URL original. También proporciona un QR que dirige a la nueva URL.", 
+    description: "App web que proporciona una nueva URL que redirige a la URL original que proporcione el usuario, la nueva URL redirige a la dirección de la URL original. También proporciona un QR que dirige a la nueva URL.", 
   },
 ]
 ---
@@ -41,7 +42,7 @@ const PROJECTS = [
     class="flex flex-row transition-transform duration-300 ease-in-out">
       {
         PROJECTS.map((project) => (
-        <article id="project" class="min-w-full flex flex-col items-center">
+        <article class="project-slide">
           <figure class="md:w-[85%]">    
             <div 
             class="mx-5 relative group flex flex-col">
@@ -111,6 +112,8 @@ const PROJECTS = [
     </div>
   </div> 
   <SliderButtons idTermination="Project"/>
+
+  <div id="projectsDots" class="flex justify-center gap-2 mt-4 xl:hidden"></div>
 
 
   <div class="hidden xl:flex xl:flex-col xl:gap-10">
